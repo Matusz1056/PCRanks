@@ -1,0 +1,77 @@
+﻿@using PCRanks.Application.PCRanks.Commands.CreatePCRanks;
+
+@model CreatePCRanksCommand
+<h1>Add your game score</h1>
+
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form action="/PcRanks/Create" method="post">
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="UserName">User name</label>
+                <input class="form-control" type="text" asp-for="UserName" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="GameName">Game name</label>
+                <input class="form-control" type="text" asp-for="GameName" />
+                <span asp-validation-for="GameName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="GameResolution">Game Resolution</label>
+                <input class="form-control" type="text" asp-for="GameResolution" />
+                <span asp-validation-for="GameResolution" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="GameSettings">Game Settings</label>
+                <input class="form-control" type="text" asp-for="GameSettings" />
+                <span asp-validation-for="GameSettings" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Fps">AVG FPS</label>
+                <input class="form-control" type="text" asp-for="Fps" />
+                <span asp-validation-for="Fps" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Cpu">CPU model</label>
+                <input class="form-control" type="text" asp-for="Cpu" />
+                <span asp-validation-for="Cpu" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Gpu">GPU model</label>
+                <input class="form-control" type="text" asp-for="Gpu" />
+                <span asp-validation-for="Gpu" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Mobo">Motherboard model</label>
+                <input class="form-control" type="text" asp-for="Mobo" />
+                <span asp-validation-for="Mobo" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="control-label" asp-for="Psu">PSU model</label>
+                <input class="form-control" type="text" asp-for="Psu" />
+                <span asp-validation-for="Psu" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <input type="submit" value="Register new result" class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+    @section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+            }

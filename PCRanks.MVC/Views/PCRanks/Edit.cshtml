@@ -1,0 +1,68 @@
+﻿@model PCRanks.Application.PCRanks.Commands.EditPCRanks.EditPCRanksCommand
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit @Model.UserName</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group m-3">
+                <label asp-for="GameName" class="control-label"></label>
+                <input asp-for="GameName" class="form-control" />
+                <span asp-validation-for="GameName" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="GameResolution" class="control-label"></label>
+                <input asp-for="GameResolution" class="form-control" />
+                <span asp-validation-for="GameResolution" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="GameSettings" class="control-label"></label>
+                <input asp-for="GameSettings" class="form-control" />
+                <span asp-validation-for="GameSettings" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Fps" class="control-label"></label>
+                <input asp-for="Fps" class="form-control" />
+                <span asp-validation-for="Fps" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Cpu" class="control-label"></label>
+                <input asp-for="Cpu" class="form-control" />
+                <span asp-validation-for="Cpu" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Gpu" class="control-label"></label>
+                <input asp-for="Gpu" class="form-control" />
+                <span asp-validation-for="Gpu" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Mobo" class="control-label"></label>
+                <input asp-for="Mobo" class="form-control" />
+                <span asp-validation-for="Mobo" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Psu" class="control-label"></label>
+                <input asp-for="Psu" class="form-control" />
+                <span asp-validation-for="Psu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

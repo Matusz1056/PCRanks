@@ -1,0 +1,32 @@
+﻿@model IEnumerable<PCRanks.Application.PCRanks.PCRanksDto>
+
+@{
+    ViewData["Title"] = "Game scores";
+}
+
+<h1>Game scores</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-secondary">Create New</a>
+</p>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card m-3" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">@item.UserName</h5>
+                <p class="card-text">@item.GameName</p>
+                <p class="card-text">@item.GameResolution</p>
+                <p class="card-text">@item.Fps</p>
+                <a class="btn btn-primary" asp-controller="PCRanks" asp-action="PCConfiguration" asp-route-encodedName="@item.EncodedName">PC configuration</a>
+                @if (item.IsEditable)
+                {
+                    <a class="btn btn-outline-secondary" asp-action="Edit" asp-route-encodedName="@item.EncodedName">Edit score</a>
+                }
+            </div>
+        </div>
+
+    }
+</div>
+
